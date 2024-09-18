@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Code Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <section id="HumanEval/27" style="text-align: center;">
+        <h2>Question_HumanEval/27</h2>
+        <pre style="font-family: monospace; background-color: #f4f4f4; padding: 20px; border-radius: 10px; color: black; font-size: 18px; display: inline-block; text-align: left; max-width: 80%; line-height: 1.5;">
+    def flip_case(string: str) -> str:
+        """ 
+        For a given string, flip lowercase characters to uppercase 
+        and uppercase to lowercase.
+    
+        Args:
+        string (str): The string whose case needs to be flipped.
+    
+        Returns:
+        str: The string with flipped case.
+    
+        Example:
+        >>> flip_case('Hello')
+        'hELLO'
+        """
+        return string.swapcase()
+        
+        </pre>
+    </section>
+    <!-- 折线图容器 -->
+    <div id="chartContainer">
+        <canvas id="probChart"></canvas>
+    </div>
+    <!-- 表格展示 -->
+    <table id="programTable">
+        <thead>
+            <tr>
+                <th>Function ID</th>
+                <th>Pass Rate (%)</th>
+                <th>Coder Score</th>
+                <th>Reviewer Score</th>
+                <th>Coder Reviewer Score</th>
+                <th>Original RSA Score</th>
+                <th>Log RSA Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 第一行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    ''' For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    '''&#10;    result = ''&#10;    for char in string:&#10;        if char.islower():&#10;            result += char.upper()&#10;        else:&#10;            result += char.lower()&#10;    return result&#10;" 
+                data-description="Create a function that takes a string as input and returns a new string where all lowercase letters are replaced with their uppercase counterparts, and all uppercase letters are replaced with their lowercase counterparts."  
+                prob = '[-17.273344898276264, -19.518596211481054, -45.619362875891966, -45.433466854621656, -18.942151473554986, -26.571609502920182, -20.176184332944104, -29.887895667750854, -34.98496349083871, -36.88794536410933, -19.70613118901747]'>
+                <td>function_1 (s02)</td>
+                <td>100.0</td>
+                <td>-30.633084484346966</td>
+                <td>-74.38939386348466</td>
+                <td>-105.02247834783162</td>
+                <td>0.6958328264102952</td>
+                <td>-0.05483572799128093</td>
+            </tr>
+            <!-- 第二行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return string.translate(str.maketrans(&quot;&quot;.join([chr(i) for i in range(256) if chr(i) in string]), &#10;                                         &quot;&quot;.join([chr(i).lower() for i in range(256) if chr(i) in string])&#10;                                        )&#10;" 
+                data-description="Create a function that takes a string as input. Returns a new string where all characters that are in the original string have been replaced with their lowercase equivalent, if they are in the range of 256. Otherwise, the character remains unchanged." 
+                prob = '[-41.21325913570763, -44.824891089046105, -53.264776110957314, -59.42940392571677, -47.57410309631268, -60.8829614124852, -44.67168003550978, -42.9021674721389, -52.02406656761832, -57.62673403598774, -44.929115068939154]'           >
+                <td>function_2 (s26)</td>
+                <td>0.0</td>
+                <td>-49.241753409933665</td>
+                <td>-81.89893480341561</td>
+                <td>-131.14068821334928</td>
+                <td>0.7878377693069079</td>
+                <td>-0.07502279502210037</td>
+            </tr>
+            <!-- 第三行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return string.translate(str.maketrans(&quot;&quot;, &quot;&quot;, string.lower() + string.upper()))&#10;"
+                data-description="Create a function that takes a string as input. It returns a new string where all the lowercase letters have been moved to the beginning of the string and all the uppercase letters have been moved to the end of the string. The function uses the translate() method and the maketrans() method to achieve this." 
+                prob = '[-18.95254852494645, -23.33088910722381, -38.94192184410076, -27.068876406041454, -22.190253841577942, -34.97994881611157, -24.161431562977214, -23.881085551601245, -36.613116660426385, -21.157289567441694, -22.23087338449568]'           >
+                <td>function_3 (s17)</td>
+                <td>33.33</td>
+                <td>-30.69359118654296</td>
+                <td>-79.32443199264526</td>
+                <td>-110.01802317918822</td>
+                <td>0.8245558904447835</td>
+                <td>-0.06457245912609302</td>
+            </tr>
+            <!-- 第四行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return string.translate(str.maketrans(&quot;az&quot;, &quot;zA&quot;), True)&#10;" 
+                data-description="Create a function that takes a string as input. The function translates the string by flipping the case of all letters in the string. If the letter is in lowercase, it will be translated to uppercase, and if the letter is in uppercase, it will be translated to lowercase. The function returns the translated string." 
+                prob = '[-33.38094667742871, -40.73819623211648, -54.58568172577088, -44.079375383271554, -43.341428670772984, -36.09476175372038, -41.54261329654719, -39.44504756769584, -52.111985873526464, -45.05111651170182, -39.84620302226995]'>
+                <td>function_4 (s21)</td>
+                <td>0.0</td>
+                <td>-46.88071026222491</td>
+                <td>-77.05955807396094</td>
+                <td>-123.94026833618585</td>
+                <td>0.9335616065259328</td>
+                <td>-0.07099046047692707</td>
+            </tr>
+            <!-- 第五行 -->
+            <tr data-code=" def flip_case(string: str) -> str:&#10;    return string.translate(str.maketrans(&quot;az&quot;, &quot;ZA&quot;))&#10;" 
+                data-description="Create a function that takes a string as input. The function translates the string by flipping the case of the letters 'a' and 'z' to their respective uppercase or lowercase letters. The function returns the translated string."  
+                prob = '[-18.09346745011635, -24.405203437800992, -40.23313614916424, -26.00886638436532, -25.973503322312354, -23.084648480671603, -25.081642444648878, -23.767776326759304, -35.01201715006846, -28.12579242227548, -22.67414855246261]' >
+                <td>function_5 (s27)</td>
+                <td>33.33</td>
+                <td>-33.96413048118933</td>
+                <td>-85.6189941608609</td>
+                <td> -119.58312464205022</td>
+                <td>0.9765591679008357</td>
+                <td>-0.0618664259920481</td>
+            </tr>
+            <!-- 第六行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    result = &quot;&quot;&#10;    for char in string:&#10;        if char.islower():&#10;            result += char.swapcase()&#10;        else:&#10;            result += char&#10;    return result&#10;"
+                data-description="Create a function that takes a string as input and returns a new string where all lowercase letters have been replaced with their uppercase equivalent, and all uppercase letters have been replaced with their lowercase equivalent."   
+                prob = '[-15.309524471060286, -18.90348262335465, -42.82309560532303, -44.92186374330049, -20.475197438703617, -25.38708049873094, -19.32875943130057, -29.184034809113655, -28.801685191625438, -35.710415969260794, -18.83736016703915]'         >
+                <td>function_6 (s25)</td>
+                <td>33.33</td>
+                <td>-31.320563613725653</td>
+                <td>-74.36598368689374</td>
+                <td>-105.6865473006194</td>
+                <td>0.9254306668021912</td>
+                <td>-0.051085814065470074</td>
+            </tr>
+            <!-- 第七行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return string.translate(str.maketrans(&quot;&quot;, &quot;&quot;, string.lower() + string.upper()))&#10;" 
+                data-description="Create a function that takes a string as input. Returns a new string where all lowercase letters are replaced with their uppercase counterparts, and vice versa. The function uses the translate() method and the maketrans() method to achieve this."   
+                prob = '[-18.95254852494645, -23.33088910722381, -38.94192184410076, -27.068876406041454, -22.190253841577942, -34.97994881611157, -24.161431562977214, -23.881085551601245, -36.613116660426385, -21.157289567441694, -22.23087338449568]'     >
+                <td>function_7 (s09)</td>
+                <td>33.33</td>
+                <td>-30.69359118654296</td>
+                <td>-79.32443199264526</td>
+                <td>-110.01802317918822</td>
+                <td>0.8245558904447835</td>
+                <td>-0.06457245912609302</td>
+            </tr>
+            <!-- 第八行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    return string.replace(string.lower(), string.upper())&#10;" 
+                data-description="Create a function that takes a string as input. Returns a new string where all lowercase letters are replaced with their uppercase equivalent. If the input string contains no lowercase letters, the function returns the original string unchanged."     
+                prob ='[-18.63094823690335, -22.937728466531553, -39.77032183180563, -33.297921753372066, -24.86558612677618, -30.468965394888073, -23.6141279099611, -29.288779936963692, -28.817057177220704, -26.051710006897338, -23.16734114675637]'        >
+                <td>function_8 (s45)</td>
+                <td>33.33</td>
+                <td>-30.763136211802703</td>
+                <td>-74.8512194719442</td>
+                <td>-105.61435568374691</td>
+                <td>0.9674276977654942</td>
+                <td>-0.06191525048353125</td>
+            </tr>
+            <!-- 第九行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return ''.join([chr(ord(c) ^ 0x20) for c in string])&#10;" 
+                data-description="Create a function that takes a string as input. The function flips the case of each character in the string by XORing its ASCII code with 0x20. Then, it returns the modified string."  
+                prob = '[-21.04030742206487, -24.622129817103996, -40.732669018776505, -37.534605587374244, -24.966502796414716, -26.208008742323727, -25.172495089791482, -29.74806419754168, -38.30110898372732, -15.418655136440066, -24.48348451518723]'          >
+                <td>function_9 (s53)</td>
+                <td>33.33</td>
+                <td>-34.24012146449328</td>
+                <td>-75.59709582388678</td>
+                <td>-109.83721728838006</td>
+                <td>0.003604291661502869</td>
+                <td>-0.06826214777696757</td>
+            </tr>
+            <!-- 第十行 -->
+            <tr data-code="def flip_case(string: str) -> str:&#10;    &quot;&quot;&quot; For a given string, flip lowercase characters to uppercase and uppercase to lowercase.&#10;    >>> flip_case('Hello')&#10;    'hELLO'&#10;    &quot;&quot;&quot;&#10;    return string.translate(str.maketrans(&quot;&quot;, &quot;&quot;, string.lower()))&#10;"
+                data-description="Create a function that takes a string. Returns a new string with all characters changed to their corresponding characters in the opposite case (lowercase to uppercase and vice versa)."    
+                prob = '[-19.203031627595465, -23.20106986096016, -32.978971631539935, -28.798558875425442, -22.454271261131908, -33.54776117005167, -23.769070895137247, -22.507496874593016, -28.94441540036587, -21.970941303045038, -23.24279511959776]'        >
+                <td>function_10 (s52)</td>
+                <td>0.0</td>
+                <td>-30.559701544675534</td>
+                <td>-80.27532592004718</td>
+                <td>-110.83502746472271</td>
+                <td>0.8440820808945265</td>
+                <td>-0.06843112469162008</td>
+        </tbody>
+    </table>
+
+    <!-- 用于显示代码的部分 -->
+    <div id="codeDisplay">
+        <pre id="codeBlock">Hover over a row to see the program code here.</pre>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div>
+        <h3>Heatmap</h3>
+        <table id="heatmap" border="1" cellspacing="0" cellpadding="5"></table>
+        <p id="info">Click on a cell to see details here.</p>
+    </div>
+
+    <!-- 显示函数和描述的部分 -->
+    <div id="infoDisplay"></div>
+
+    <script>
+        // 定义矩阵数据
+        const matrix = [
+        [-0.06255882, -0.08178697, -0.07574191, -0.08473997, -0.07752901, -0.06285772, -0.07574191, -0.07699081, -0.07943302, -0.08282706],
+        [-0.11710397, -0.10490116, -0.07208414, -0.09580913, -0.09616964, -0.11916083, -0.07208414, -0.08657628, -0.05002353, -0.07829473],
+        [-0.11106279, -0.09470231, -0.12474306, -0.11082531, -0.11971549, -0.09610733, -0.12474306, -0.09576621, -0.12426225, -0.10314511],
+        [-0.09488171, -0.07809721, -0.08136428, -0.08388684, -0.08126841, -0.09738318, -0.08136428, -0.09733386, -0.09651317, -0.08020678],
+        [-0.06405104, -0.08131835, -0.08231943, -0.08834768, -0.08576087, -0.06449746, -0.08231943, -0.07847559, -0.08166842, -0.08470247],
+        [-0.08435387, -0.11082865, -0.11917876, -0.07676187, -0.07893261, -0.08471326, -0.11917876, -0.10125591, -0.08502799, -0.11954941],
+        [-0.0601335 , -0.08660179, -0.07560351, -0.09217318, -0.08881039, -0.06832297, -0.07560351, -0.08263449, -0.0810001 , -0.08001711],
+        [-0.14423247, -0.10818266, -0.09222527, -0.09374255, -0.0889313 , -0.14989819, -0.09222527, -0.11065723, -0.12177544, -0.10262535],
+        [-0.14482261, -0.09696084, -0.13267744, -0.11608606, -0.1375679 , -0.14289488, -0.13267744, -0.13216662, -0.13215109, -0.11752249],
+        [-0.06196347, -0.08159725, -0.07948973, -0.08663695, -0.08344795, -0.06307837, -0.07948973, -0.07622775, -0.07988284, -0.08267837],
+        [-0.05483573, -0.0750228 , -0.06457246, -0.07099046, -0.06186643, -0.05108581, -0.06457246, -0.06191525, -0.06826215, -0.06843112]
+    ];
+
+    const xLabels = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10'];
+    const yLabels = ['d10', 'd9', 'd8', 'd7', 'd6', 'd5', 'd4', 'd3', 'd2', 'd1', 'd0'];  // 倒序排列的纵坐标
+
+
+    const minValue = Math.min(...matrix.flat());
+    const maxValue = Math.max(...matrix.flat());
+
+    const table = document.getElementById('heatmap');
+    const tbody = document.querySelector('#programTable tbody');
+
+    function getColor(value) {
+        const ratio = (value - minValue) / (maxValue - minValue); 
+        const red = Math.round(255 * ratio);  
+        return `rgb(255, ${255 - red}, ${255 - red})`; 
+    }
+
+    // 添加横坐标
+    const headerRow = document.createElement('tr');
+    const emptyHeaderCell = document.createElement('td');  // 空单元格，用于左上角
+    headerRow.appendChild(emptyHeaderCell);
+    xLabels.forEach(label => {
+        const headerCell = document.createElement('td');
+        headerCell.textContent = label;
+        headerRow.appendChild(headerCell);
+    });
+    table.appendChild(headerRow);
+
+    // 动态生成表格
+    for (let i = 0; i < matrix.length; i++) {
+        const row = document.createElement('tr');
+
+        // 添加纵坐标（倒序显示）
+        const yLabelCell = document.createElement('td');
+        yLabelCell.textContent = yLabels[i];
+        row.appendChild(yLabelCell);
+
+        for (let j = 0; j < matrix[i].length; j++) {
+            const cell = document.createElement('td');
+            const value = matrix[i][j];
+            cell.style.backgroundColor = getColor(value);
+
+            cell.addEventListener('click', () => {
+                let description, code;
+
+                const x = i;
+                const y = j;
+
+                if (x === matrix.length - 1) {
+                    description = 'Your task is to implement a function that will simplify the expression x * n. The function returns True if x * n evaluates to a whole number and False otherwise. Both x and n, are string representation of a fraction, and have the following format, <numerator>/<denominator>; where both numerator and denominator are positive whole numbers.';
+                    const codeRow = tbody.rows[y];
+                    code = codeRow.getAttribute('data-code').replace(/&#10;/g, '\n');
+                } else if (x >= 0 && y < tbody.rows.length) {
+                    const descriptionRow = tbody.rows[9 - x];
+                    description = descriptionRow.getAttribute('data-description');
+                    const codeRow = tbody.rows[y];
+                    code = codeRow.getAttribute('data-code').replace(/&#10;/g, '\n');
+                } else {
+                    description = "Invalid row or column index.";
+                    code = "Code not available.";
+                }
+
+                document.getElementById('infoDisplay').textContent = `RSA_score: ${value.toFixed(6)}\n\nDescription: ${description}\n\nFunction Code:\n${code}`;
+            });
+
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>
